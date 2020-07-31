@@ -17,12 +17,12 @@ import Find from './src/screens/Find/Find';
 import CloudVillage from './src/screens/CloudVillage/CloudVillage';
 import VideoScreen from './src/screens/VideoScreen/VideoScreen';
 import Animated from 'react-native-reanimated';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import FeatherIcon from 'react-native-vector-icons/Feather';
 
 function MyTabBar({state, descriptors, navigation, position}) {
   return (
     <View style={{flexDirection: 'row', paddingTop: 20}}>
-      <Icon name="rocket" size={30} color="#900" />
+      <FeatherIcon name="menu" size={30} color="#900" />
       {state.routes.map((route, index) => {
         const {options} = descriptors[route.key];
         const label =
@@ -72,6 +72,7 @@ function MyTabBar({state, descriptors, navigation, position}) {
           </TouchableOpacity>
         );
       })}
+      <FeatherIcon name="search" size={30} color="#900" />
     </View>
   );
 }
