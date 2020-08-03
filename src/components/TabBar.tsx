@@ -84,6 +84,7 @@ const TabBar: React.FC<MaterialTopTabBarProps> = ({
     </View>
   );
 };
+
 const TopTabNavigator: React.FC = () => {
   return (
     <Tab.Navigator tabBar={(props) => <TabBar {...props} />}>
@@ -94,4 +95,5 @@ const TopTabNavigator: React.FC = () => {
     </Tab.Navigator>
   );
 };
+
 export default TopTabNavigator;
