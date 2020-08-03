@@ -19,6 +19,14 @@ const TabBar: React.FC<MaterialTopTabBarProps> = ({
 }) => {
   return (
     <View style={{flexDirection: 'row', paddingTop: 20}}>
+      <FeatherIcon
+        name="menu"
+        size={24}
+        color="#900"
+        onPress={() => {
+          navigation.openDrawer();
+        }}
+      />
       {state.routes.map((route, index) => {
         const {options} = descriptors[route.key];
         const label =
@@ -63,7 +71,7 @@ const TabBar: React.FC<MaterialTopTabBarProps> = ({
             testID={options.tabBarTestID}
             onPress={onPress}
             onLongPress={onLongPress}
-            style={{flex: 1}}>
+            style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
             {index === 11 || index === 5 ? (
               <FeatherIcon name={route.name} size={30} color="#900" />
             ) : (
@@ -72,6 +80,7 @@ const TabBar: React.FC<MaterialTopTabBarProps> = ({
           </TouchableOpacity>
         );
       })}
+      <FeatherIcon name="search" size={24} color="#900" />
     </View>
   );
 };
